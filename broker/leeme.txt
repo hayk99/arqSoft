@@ -1,0 +1,26 @@
+Para la ejecución de la arquitectura, lo primero es compilar todos 
+los archivos si no están los ejecutables creados con el comando "javac *.java".
+
+Una vez creados los .class se ejecuta primero el Broker con el comando 
+java BrokerB, después los servidores con java ServidorA y java ServidorB
+y por último java Cliente.
+
+Éstos, se pueden ejecutar en la máquina que se desee, cambiando las
+direcciones IP en el código fuente. Por defecto (en los fuentes entregados), 
+tanto el bróker como los servidores se lanzan en la dirección 
+155.210.154.192 y el cliente en la máquina que sea.
+
+Si se desea cambiar, hay que modificar lo siguiente:
+Para cambiar de dirección a ejecutar los servidores:
+En ServidorA.java o ServidorB.java (el que se desea cambiar)
+String hostName = "DIRECCION_SERVIDOR";
+
+Para cambiar de dirección a ejecutar el bróker: 
+En ServidorA.java y ServidorB.java
+String brokerIP = "DIRECCION_BROKER";
+
+En Cliente.java
+String ip_broker = "DIRECCION_BROKER"
+
+En BrokerB.java
+String brokerIP = "DIRECCION_BROKER";
